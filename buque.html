@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Um buquê pra você 💐</title>
+  <meta name="description" content="Um buquê que nunca murcha, com uma mensagem secreta em cada flor.">
+  <meta name="theme-color" content="#140c16">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Um buquê pra você 💐">
+  <meta property="og:description" content="Cada flor guarda uma mensagem secreta. Toque nelas e descubra.">
+  <meta property="og:image" content="https://gustavoevil3228.github.io/site-do-nosso-amor/img/compartilhar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="icones/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/buque.css">
+
+  <script src="config.js" defer></script>
+  <script src="js/buque.js" defer></script>
+</head>
+<body class="pagina-buque">
+  <header class="topo topo-buque">
+    <a class="voltar" href="./">← Nossa vida</a>
+    <span class="progresso" id="progresso" aria-live="polite"></span>
+  </header>
+
+  <main class="palco-buque">
+    <h1 class="titulo-buque">Um buquê pra você</h1>
+    <p class="sub-buque">Cada flor brilhante guarda uma mensagem secreta. Toque numa flor pra tentar decifrar.</p>
+
+    <div class="vaso">
+      <svg id="buque" viewBox="0 16 400 564" role="group" aria-label="Buquê de flores"></svg>
+    </div>
+
+    <div class="aviso-final oculto" id="aviso-final">
+      <p>Você decifrou todas as flores 💛</p>
+      <button class="botao" type="button" id="ver-final">Ler a mensagem final</button>
+    </div>
+
+    <div class="acoes">
+      <button class="botao secundario" type="button" id="novo-buque">🔄 Montar outro buquê</button>
+    </div>
+    <p class="nota-buque">As flores mudam toda vez que o buquê é montado, mas as mensagens continuam guardadas nelas.</p>
+    <p class="nota-buque"><button class="link" type="button" id="recomecar">Recomeçar o desafio</button></p>
+  </main>
+
+  <!-- Bilhete de cada flor -->
+  <dialog class="bilhete" id="bilhete" aria-labelledby="bilhete-titulo">
+    <button class="botao-icone fechar-bilhete" type="button" data-fechar aria-label="Fechar">✕</button>
+    <p class="bilhete-nivel" id="bilhete-nivel"></p>
+    <h2 class="bilhete-titulo" id="bilhete-titulo"></h2>
+    <div id="bilhete-corpo"></div>
+  </dialog>
+
+  <!-- Mensagem final -->
+  <dialog class="bilhete final" id="final" aria-labelledby="final-titulo">
+    <p class="bilhete-nivel">Todas as flores decifradas</p>
+    <h2 class="bilhete-titulo" id="final-titulo">Pra você 💐</h2>
+    <p class="mensagem-revelada" id="final-texto"></p>
+    <div class="acoes"><button class="botao" type="button" data-fechar>Voltar pro buquê</button></div>
+  </dialog>
+
+  <div class="petalas" id="petalas" aria-hidden="true"></div>
+</body>
+</html>

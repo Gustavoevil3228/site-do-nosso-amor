@@ -1,0 +1,542 @@
+/* ===== Página do buquê ===== */
+.pagina-buque {
+  min-height: 100svh;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255, 122, 168, 0.18), transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(185, 160, 255, 0.14), transparent 60%),
+    var(--fundo);
+}
+
+.topo-buque {
+  justify-content: space-between;
+}
+
+.voltar {
+  color: var(--texto);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.progresso {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--texto-suave);
+}
+
+.palco-buque {
+  width: min(100% - 32px, 640px);
+  margin: 0 auto;
+  padding: 84px 0 48px;
+  text-align: center;
+}
+
+.titulo-buque {
+  font-family: var(--fonte-script);
+  font-size: clamp(3rem, 12vw, 4.6rem);
+}
+
+.sub-buque {
+  margin: 6px auto 0;
+  max-width: 440px;
+  color: var(--texto-suave);
+}
+
+.vaso {
+  width: min(100%, 470px);
+  margin: 8px auto 0;
+}
+
+#buque {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* entrada: cabos crescem, flores desabrocham */
+#buque .cabos path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: crescer 1.1s ease-out forwards;
+}
+
+#buque .folhas,
+#buque .mosquitinhos,
+#buque .papel,
+#buque .laco {
+  animation: aparecer 1s ease both;
+}
+
+#buque .folhas,
+#buque .mosquitinhos {
+  animation-delay: 0.6s;
+}
+
+#buque .entrada {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: desabrochar 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+}
+
+#buque .balanco {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: balancar-flor 4.5s ease-in-out infinite alternate;
+}
+
+#buque .msg {
+  cursor: pointer;
+  outline: none;
+}
+
+#buque .halo {
+  animation: pulsar 2.4s ease-in-out infinite;
+}
+
+#buque .msg:hover .halo,
+#buque .msg:focus-visible .halo {
+  opacity: 1;
+  animation: none;
+}
+
+#buque .msg:focus-visible .forma {
+  stroke: #fff;
+}
+
+#buque .brilho {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: cintilar 1.8s ease-in-out infinite;
+}
+
+#buque .msg.resolvida .brilho {
+  display: none;
+}
+
+#buque .msg.resolvida .halo {
+  animation-duration: 3.6s;
+}
+
+#buque.parado * {
+  animation: none !important;
+  stroke-dashoffset: 0 !important;
+}
+
+.aviso-final {
+  margin: 8px auto 0;
+  padding: 16px;
+  border-radius: var(--raio);
+  background: rgba(255, 210, 122, 0.12);
+  border: 1px solid rgba(255, 210, 122, 0.4);
+}
+
+.aviso-final p {
+  margin: 0 0 10px;
+  font-weight: 800;
+}
+
+.nota-buque {
+  margin: 14px auto 0;
+  max-width: 420px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.link {
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: var(--texto-suave);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===== Bilhete ===== */
+.bilhete {
+  width: min(100% - 24px, 520px);
+  max-height: calc(100dvh - 24px);
+  padding: 28px 20px 22px;
+  border: 0;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 122, 168, 0.16), transparent 50%),
+    #fff8fa;
+  color: #3a1f2c;
+  color-scheme: light;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  overflow-y: auto;
+}
+
+.bilhete[open] {
+  animation: abrir-bilhete 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+.bilhete::backdrop {
+  background: rgba(10, 6, 12, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.fechar-bilhete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  background: rgba(58, 31, 44, 0.08);
+  color: #3a1f2c;
+}
+
+.fechar-bilhete:hover {
+  background: rgba(58, 31, 44, 0.15);
+}
+
+.bilhete-nivel {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d9447c;
+}
+
+.bilhete-titulo {
+  margin: 4px 0 8px;
+  font-family: var(--fonte-script);
+  font-size: 2.6rem;
+  color: #3a1f2c;
+}
+
+.instrucao {
+  margin: 0 0 14px;
+  color: #6b4a5a;
+}
+
+.cifrado {
+  margin: 0 0 16px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #fbe9ef;
+  border: 1px dashed #e9a3bd;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  word-break: break-word;
+  transition: background 0.4s, color 0.4s;
+}
+
+.cifrado.certo {
+  background: #fff2cc;
+  border-color: #e3a43c;
+  color: #7a4d00;
+}
+
+.cifrado.morse {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.pergunta {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.resposta label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.linha-resposta {
+  display: flex;
+  gap: 8px;
+}
+
+.linha-resposta input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 2px solid #efc2d2;
+  border-radius: 14px;
+  background: #fff;
+  color: #3a1f2c;
+  font: 600 1rem var(--fonte);
+}
+
+.linha-resposta input:focus {
+  outline: none;
+  border-color: #ff7aa8;
+}
+
+.bilhete .botao {
+  box-shadow: none;
+}
+
+.bilhete .botao.secundario {
+  background: #fbe9ef;
+  color: #3a1f2c;
+  border-color: #efc2d2;
+}
+
+.retorno {
+  min-height: 1.5em;
+  margin: 8px 0 0;
+  font-weight: 700;
+  color: #d9447c;
+}
+
+.tremer {
+  animation: tremer 0.4s;
+}
+
+.dica {
+  margin-top: 6px;
+}
+
+.dica .link {
+  color: #8a5a70;
+}
+
+.dica-texto {
+  margin: 4px 0 0;
+  color: #6b4a5a;
+  font-size: 0.95rem;
+}
+
+/* letras em código (emoji e números) */
+.cripto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  margin: 0 0 4px;
+}
+
+.palavra {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.slot {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+
+.simbolo {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  min-width: 30px;
+  font-weight: 800;
+  color: #7a58dc;
+}
+
+.slot input {
+  width: 30px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-bottom: 3px solid #e9a3bd;
+  border-radius: 6px 6px 0 0;
+  background: #fbe9ef;
+  color: #3a1f2c;
+  text-align: center;
+  text-transform: uppercase;
+  font: 800 1.15rem var(--fonte);
+}
+
+.slot input:focus {
+  outline: none;
+  border-color: #ff4f8b;
+  background: #ffe1ec;
+}
+
+.slot.pista input {
+  background: #f1e9ff;
+  border-color: #b9a0ff;
+  color: #5b3fc0;
+}
+
+.cripto.certo .slot input {
+  background: #fff2cc;
+  border-color: #e3a43c;
+  color: #7a4d00;
+}
+
+.solto {
+  align-self: end;
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+/* roda de César */
+.fitas {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 12px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.fita {
+  display: flex;
+  justify-content: center;
+  min-width: max-content;
+  margin: 0 auto;
+}
+
+.fita span {
+  width: 17px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #8a5a70;
+}
+
+.fita.baixo span {
+  color: #d9447c;
+}
+
+.roda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roda .botao-icone {
+  flex: none;
+  background: #fbe9ef;
+  color: #3a1f2c;
+}
+
+.roda input[type="range"] {
+  flex: 1;
+  accent-color: #ff4f8b;
+  height: 32px;
+}
+
+.giro-valor {
+  margin: 6px 0 0;
+  color: #6b4a5a;
+}
+
+/* morse */
+.acoes.pequenas {
+  margin: 0 0 14px;
+}
+
+.acoes.pequenas .botao {
+  min-height: 42px;
+  padding: 8px 16px;
+}
+
+.colinha {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  gap: 4px 8px;
+  margin: 0 0 14px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fbe9ef;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.colinha b {
+  display: inline-block;
+  width: 16px;
+  color: #d9447c;
+}
+
+/* mensagem revelada */
+.selo {
+  margin: 6px 0 0;
+  font-weight: 800;
+  color: #c98a12;
+}
+
+.mensagem-revelada {
+  margin: 10px 0 18px;
+  font-family: var(--fonte-script);
+  font-size: clamp(2rem, 7vw, 2.6rem);
+  line-height: 1.25;
+  color: #3a1f2c;
+  animation: escrever 1.2s ease both;
+}
+
+.final .bilhete-titulo {
+  font-size: 3rem;
+}
+
+/* ===== Pétalas ===== */
+.petalas {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petalas i {
+  position: absolute;
+  top: -30px;
+  width: 14px;
+  height: 18px;
+  border-radius: 14px 0 14px 0;
+  opacity: 0.9;
+  animation: cair linear forwards;
+}
+
+/* ===== Animações ===== */
+@keyframes crescer {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes desabrochar {
+  from { transform: scale(0) rotate(-40deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes balancar-flor {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+@keyframes cintilar {
+  0%, 100% { transform: scale(0.4); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes abrir-bilhete {
+  from { transform: translateY(30px) scale(0.92); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes tremer {
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes escrever {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes cair {
+  to { transform: translate(var(--vento), 110vh) rotate(var(--giro)); }
+}
