@@ -2,15 +2,9 @@
 
 Fiz toda a migração sem parar pra perguntar. Abaixo está o que ficou em aberto, em ordem de importância.
 
-## ⚠️ O que falta você fazer (2 minutos)
+## ✅ Publicação
 
-O repositório está **privado**, e o GitHub Pages grátis só publica repositório **público**.
-
-1. **Deixar o repositório público:** abra <https://github.com/Gustavoevil3228/site-do-nosso-amor/settings>, role até **Danger Zone**, clique em **Change visibility** e escolha **Public**.
-2. **Ligar o Pages:** abra <https://github.com/Gustavoevil3228/site-do-nosso-amor/settings/pages>. Em **Source**, escolha **Deploy from a branch**, depois a branch **main** e a pasta **/ (root)**, e clique em **Save**.
-3. Espere uns 2 minutos. O site vai estar em <https://gustavoevil3228.github.io/site-do-nosso-amor/>.
-
-> Se você tiver GitHub Pro, o passo 1 não é necessário, mas mesmo assim o site fica aberto pra quem tiver o link.
+Feita em 10/11: o repositório é público e o GitHub Pages publica a branch **main**. O site está em <https://gustavoevil3228.github.io/site-do-nosso-amor/>.
 
 ## Dúvidas
 
