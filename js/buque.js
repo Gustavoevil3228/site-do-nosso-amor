@@ -622,7 +622,12 @@
   let mostrarFinalDepois = false;
 
   const mostrarRevelada = (i) => {
-    corpo.innerHTML = `<p class="selo">💛 Mensagem decifrada</p><p class="mensagem-revelada">${escapar(MSGS[i].texto)}</p><div class="acoes"><button class="botao" type="button" data-fechar>Voltar pro buquê</button></div>`;
+    const m = MSGS[i];
+    const video = m.musica && String(m.musica).replace(/[^\w-]/g, "");
+    const player = video
+      ? `<p class="aumenta">Aumenta o som 🔊</p><div class="player"><iframe src="https://www.youtube-nocookie.com/embed/${video}?autoplay=1&rel=0&playsinline=1" title="Nossa música" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+      : "";
+    corpo.innerHTML = `<p class="selo">💛 Mensagem decifrada</p><p class="mensagem-revelada">${escapar(m.texto)}</p>${player}<div class="acoes"><button class="botao" type="button" data-fechar>Voltar pro buquê</button></div>`;
   };
 
   const concluir = (i) => {

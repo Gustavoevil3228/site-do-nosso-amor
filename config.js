@@ -9,7 +9,7 @@
 window.CONFIG = {
   // Dia em que vocês começaram a namorar, no formato "AAAA-MM-DD" (ex.: "2024-01-20").
   // Enquanto estiver vazio, o contador "juntos há..." fica escondido.
-  inicioNamoro: "",
+  inicioNamoro: "2025-07-20",
 
   buque: {
     /*
@@ -20,23 +20,26 @@ window.CONFIG = {
      *   "cesar"    → letras deslocadas; ela gira a roda até a frase aparecer ("chave" de 1 a 25)
      *   "morse"    → pontos e traços, com som (use frases curtas!)
      *   "senha"    → só abre respondendo uma pergunta que só ela sabe
-     * As mensagens abaixo são EXEMPLOS — troque pelas suas.
+     * Qualquer flor pode ter "musica" (código de um vídeo do YouTube): ela toca quando a flor é decifrada.
      */
     mensagens: [
-      { cifra: "reverso", texto: "Você é a melhor parte do meu dia" },
-      { cifra: "emoji", texto: "Eu te escolheria de novo todos os dias" },
-      { cifra: "numeros", texto: "Meu lugar favorito é do seu lado" },
-      { cifra: "cesar", chave: 7, texto: "Te amo mais do que ontem" },
-      { cifra: "morse", texto: "Minha flor" },
+      { cifra: "reverso", texto: "Você é linda" },
+      { cifra: "emoji", texto: "Você é o amor da minha vida" },
+      { cifra: "numeros", texto: "Como eu te amo" },
+      { cifra: "cesar", chave: 7, texto: "Você é uma pessoa maravilhosa" },
+      { cifra: "morse", texto: "Eu te amo" },
       {
         cifra: "senha",
-        pergunta: "Que filme a gente foi ver no nosso primeiro passeio como namorados?",
-        respostas: ["jurassic world", "jurassic"],
-        texto: "Desde aquele dia no cinema eu sei que é você. Pra sempre."
+        pergunta: "Qual é o nome da nossa música?",
+        respostas: ["always forever"],
+        dica: "Aquela que é a nossa cara 🎶",
+        texto: "Always Forever 🎶",
+        // Ao acertar, toca esta música (código do vídeo no YouTube: o que vem depois de "watch?v=")
+        musica: "Gqk7DocjQ3w"
       }
     ],
 
     // Aparece quando ela decifrar todas as flores.
-    final: "Esse buquê nunca vai murchar, igual ao que eu sinto por você. Eu te amo hoje, amanhã e em todos os dias que vierem."
+    final: "Tá vendo como você é inteligente?"
   }
 };
