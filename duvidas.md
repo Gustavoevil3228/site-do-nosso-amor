@@ -8,12 +8,12 @@ Feita em 10/11: o repositório é público e o GitHub Pages publica a branch **m
 
 - **Data do namoro:** 20/07/2025. O contador "juntos há…" já aparece na capa, e o rodapé diz "Namorando desde 20 de julho de 2025".
 - **Mensagens do buquê:** são as suas, e a mensagem final é "Tá vendo como você é inteligente?".
-- **Flor 6 (cadeado):** pergunta o nome da música de vocês (resposta: *Always Forever*). Quando ela acerta, o clipe oficial começa a tocar dentro do bilhete.
+- **Flor 6 (cadeado):** pergunta o nome da música de vocês (resposta: *Always Forever*). Quando ela acerta, o vídeo `video/always-forever.mp4` (a versão de vocês) começa a tocar dentro do bilhete.
 
 ## Dúvidas que continuam abertas
 
-1. **Versão da música.** Usei o clipe oficial do Cults: <https://www.youtube.com/watch?v=Gqk7DocjQ3w>. Se a de vocês for outra versão (acelerada, ao vivo, com legenda…), troque o código em `musica` no `config.js`.
-   - No iPhone, o navegador não deixa música tocar sozinha. Lá ela vai precisar tocar no play.
+1. ✅ **Versão da música (11/11).** Trocado o clipe do YouTube pelo vídeo `video/always-forever.mp4`, que fica no próprio site. Pra trocar de novo, substitua esse arquivo ou mude `musica` no `config.js` (aceita um arquivo da pasta `video/` ou um código do YouTube).
+   - Se algum navegador bloquear o som automático, ela só precisa tocar no play.
 
 2. **Privacidade.** Com o repositório público, qualquer pessoa que achar o link ou o repositório vê as fotos e os vídeos. Pedi pros buscadores não indexarem o site (`noindex`), mas isso não é uma trava. As mensagens do buquê também ficam legíveis pra quem abrir o `config.js`. Se quiser, eu embaralho as mensagens no código.
 

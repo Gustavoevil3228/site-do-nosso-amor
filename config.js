@@ -20,7 +20,9 @@ window.CONFIG = {
      *   "cesar"    → letras deslocadas; ela gira a roda até a frase aparecer ("chave" de 1 a 25)
      *   "morse"    → pontos e traços, com som (use frases curtas!)
      *   "senha"    → só abre respondendo uma pergunta que só ela sabe
-     * Qualquer flor pode ter "musica" (código de um vídeo do YouTube): ela toca quando a flor é decifrada.
+     * Qualquer flor pode ter "musica": ela toca quando a flor é decifrada.
+     * Pode ser um vídeo da pasta video/ (ex.: "video/always-forever.mp4")
+     * ou o código de um vídeo do YouTube (o que vem depois de "watch?v=").
      */
     mensagens: [
       { cifra: "reverso", texto: "Você é linda" },
@@ -34,8 +36,8 @@ window.CONFIG = {
         respostas: ["always forever"],
         dica: "Aquela que é a nossa cara 🎶",
         texto: "Always Forever 🎶",
-        // Ao acertar, toca esta música (código do vídeo no YouTube: o que vem depois de "watch?v=")
-        musica: "Gqk7DocjQ3w"
+        // Ao acertar, toca esta música (vídeo que está na pasta video/)
+        musica: "video/always-forever.mp4"
       }
     ],
 

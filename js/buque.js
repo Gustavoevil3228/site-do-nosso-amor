@@ -623,10 +623,16 @@
 
   const mostrarRevelada = (i) => {
     const m = MSGS[i];
-    const video = m.musica && String(m.musica).replace(/[^\w-]/g, "");
-    const player = video
-      ? `<p class="aumenta">Aumenta o som 🔊</p><div class="player"><iframe src="https://www.youtube-nocookie.com/embed/${video}?autoplay=1&rel=0&playsinline=1" title="Nossa música" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
-      : "";
+    const musica = m.musica ? String(m.musica).trim() : "";
+    let player = "";
+    if (/\.(mp4|webm|m4v|mov)$/i.test(musica)) {
+      // Vídeo que está no próprio site (pasta video/)
+      player = `<p class="aumenta">Aumenta o som 🔊</p><div class="player"><video src="${escapar(musica)}" controls autoplay playsinline preload="auto" title="Nossa música"></video></div>`;
+    } else if (musica) {
+      // Código de um vídeo do YouTube
+      const video = musica.replace(/[^\w-]/g, "");
+      player = `<p class="aumenta">Aumenta o som 🔊</p><div class="player"><iframe src="https://www.youtube-nocookie.com/embed/${video}?autoplay=1&rel=0&playsinline=1" title="Nossa música" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+    }
     corpo.innerHTML = `<p class="selo">💛 Mensagem decifrada</p><p class="mensagem-revelada">${escapar(m.texto)}</p>${player}<div class="acoes"><button class="botao" type="button" data-fechar>Voltar pro buquê</button></div>`;
   };
 
@@ -677,6 +683,8 @@
     });
   }
   bilhete.addEventListener("close", () => {
+    // Para a música quando o bilhete fecha
+    corpo.querySelectorAll("video").forEach((v) => v.pause());
     if (mostrarFinalDepois) {
       mostrarFinalDepois = false;
       setTimeout(abrirFinal, 250);
